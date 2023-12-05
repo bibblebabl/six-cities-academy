@@ -53,7 +53,7 @@ function Map({ city, offers, placeLocationId }: MapProps) {
         if (selectedOffer) {
           map.flyTo(
             [selectedOffer.location.latitude, selectedOffer.location.longitude],
-            city.zoom,
+            city.location.zoom,
             {
               duration: 1,
             }

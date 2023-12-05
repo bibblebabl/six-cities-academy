@@ -130,7 +130,7 @@ function Property(): JSX.Element {
 
           <section className="property__map map">
             <Map
-              city={activeCity.location}
+              city={activeCity}
               offers={currentOffersNearby}
               placeLocationId={hoveredPlaceCardId}
             />

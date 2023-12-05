@@ -81,7 +81,7 @@ function Main(): JSX.Element {
             <div className="cities__right-section">
               <section className="cities__map map">
                 <Map
-                  city={activeCity.location}
+                  city={activeCity}
                   placeLocationId={hoveredPlaceCardId}
                   offers={offers}
                 />
