@@ -1,8 +1,14 @@
+import { City, Offer } from './../types/index';
 import { createReducer } from '@reduxjs/toolkit';
 import { changeCity } from './action';
 import { placeCardsMock } from '../mock/offers';
 
-const initialState = {
+type InitialState = {
+  city: City;
+  offers: Offer[];
+};
+
+const initialState: InitialState = {
   city: {
     name: 'Paris',
     location: {
@@ -18,7 +24,7 @@ const reducer = createReducer(initialState, (builder) => {
   builder.addCase(changeCity, (state, action) => {
     const { name, location } = action.payload.city;
 
-    state.city = {name, location};
+    state.city = { name, location };
   });
 });
 
