@@ -20,15 +20,15 @@ function Property(): JSX.Element {
     setHoveredPlaceCardId(cardId);
   };
 
-  const rentalOffer = offers.find((offer) => offer.id.toString() === id);
+  const currentOffer = offers.find((offer) => offer.id.toString() === id);
 
   useEffect(() => {
-    if (!rentalOffer) {
+    if (!currentOffer) {
       navigate('/404');
     }
-  }, [rentalOffer, id, navigate]);
+  }, [currentOffer, id, navigate]);
 
-  const rentalOffersNearby = offers.filter(
+  const currentOffersNearby = offers.filter(
     (offer) => offer.id.toString() !== id
   );
 
@@ -122,8 +122,8 @@ function Property(): JSX.Element {
             </div>
           </div>
           <div className="property__container container">
-            {rentalOffer ? (
-              <PropertyDescriptionList offer={rentalOffer} />
+            {currentOffer ? (
+              <PropertyDescriptionList offer={currentOffer} />
             ) : null}
             <Reviews reviews={reviews} offerId={id} />
           </div>
@@ -131,14 +131,14 @@ function Property(): JSX.Element {
           <section className="property__map map">
             <Map
               city={activeCity.location}
-              offers={rentalOffersNearby}
+              offers={currentOffersNearby}
               placeLocationId={hoveredPlaceCardId}
             />
           </section>
         </section>
         <div className="container">
           <NearPlaces
-            offers={rentalOffersNearby}
+            offers={currentOffersNearby}
             setActiveCard={setActiveCard}
           />
         </div>
