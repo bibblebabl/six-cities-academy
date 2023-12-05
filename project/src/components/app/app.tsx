@@ -6,13 +6,8 @@ import Property from '../../pages/property/property';
 import Page404 from '../../pages/page404/page404';
 import { AppRoute, AuthorizationStatus } from '../../const';
 import PrivateRoute from '../private-route/private-route';
-import { Offer } from '../../types';
 
-export type AppProps = {
-  offers: Offer[];
-};
-
-function App({ offers }: AppProps): JSX.Element {
+function App(): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
