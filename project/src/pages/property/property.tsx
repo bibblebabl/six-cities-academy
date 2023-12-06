@@ -6,6 +6,7 @@ import NearPlaces from '../../components/near-places/near-places';
 import Map from '../../components/map/map';
 import { reviews } from '../../mock/reviews';
 import { useAppSelector } from '../../hooks';
+import PropertyGallery from '../../components/property-gallery/property-gallery';
 
 function Property(): JSX.Element {
   const offers = useAppSelector((state) => state.offers);
@@ -75,52 +76,7 @@ function Property(): JSX.Element {
 
       <main className="page__main page__main--property">
         <section className="property">
-          <div className="property__gallery-container container">
-            <div className="property__gallery">
-              <div className="property__image-wrapper">
-                <img
-                  className="property__image"
-                  src="img/room.jpg"
-                  alt="Studio"
-                />
-              </div>
-              <div className="property__image-wrapper">
-                <img
-                  className="property__image"
-                  src="img/apartment-01.jpg"
-                  alt="Studio"
-                />
-              </div>
-              <div className="property__image-wrapper">
-                <img
-                  className="property__image"
-                  src="img/apartment-02.jpg"
-                  alt="Studio"
-                />
-              </div>
-              <div className="property__image-wrapper">
-                <img
-                  className="property__image"
-                  src="img/apartment-03.jpg"
-                  alt="Studio"
-                />
-              </div>
-              <div className="property__image-wrapper">
-                <img
-                  className="property__image"
-                  src="img/studio-01.jpg"
-                  alt="Studio"
-                />
-              </div>
-              <div className="property__image-wrapper">
-                <img
-                  className="property__image"
-                  src="img/apartment-01.jpg"
-                  alt="Studio"
-                />
-              </div>
-            </div>
-          </div>
+          <PropertyGallery offer={currentOffer} />
           <div className="property__container container">
             {currentOffer ? (
               <PropertyDescriptionList offer={currentOffer} />
